@@ -14,7 +14,7 @@ class App extends Component {
 
   handleIncrement = habit => {
     const habits = this.state.habits.map(item => {
-      if (item.id == habit.id) {
+      if (item.id === habit.id) {
         return { ...habit, count: habit.count + 1 }
       }
       return item;  //id가 다른 경우
@@ -24,7 +24,7 @@ class App extends Component {
 
   handleDecrement = habit => {
     const habits = this.state.habits.map(item => {
-      if (item.id == habit.id) {
+      if (item.id === habit.id) {
         const count = habit.count - 1;
         return { ...habit, count: count < 0 ? 0 : count };
       }
@@ -34,7 +34,7 @@ class App extends Component {
   };
 
   handleDelete = habit => {
-    const habits = this.state.habits.filter(item => item.id != habit.id);
+    const habits = this.state.habits.filter(item => item.id !== habit.id);
     this.setState({ habits });
   };
 
